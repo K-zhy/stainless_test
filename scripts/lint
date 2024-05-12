@@ -4,5 +4,4 @@ set -e
 
 cd "$(dirname "$0")/.."
 
-rye run lint
-
+./node_modules/.bin/eslint --ext ts,js .
