@@ -16,29 +16,18 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install Rye
-        run: |
-          curl -sSf https://rye-up.com/get | bash
-          echo "$HOME/.rye/shims" >> $GITHUB_PATH
-        env:
-          RYE_VERSION: 0.24.0
-          RYE_INSTALL_OPTION: '--yes'
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
 
       - name: Install dependencies
         run: |
-          rye sync --all-features
+          yarn install
 
-      - name: Run ruff
+      - name: Check types
         run: |
-          rye run check:ruff
-
-      - name: Run type checking
-        run: |
-          rye run typecheck
-
-      - name: Ensure importable
-        run: |
-          rye run python -c 'import petstore'
+          yarn build
   test:
     name: test
     runs-on: ubuntu-latest
@@ -46,13 +35,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install Rye
-        run: |
-          curl -sSf https://rye-up.com/get | bash
-          echo "$HOME/.rye/shims" >> $GITHUB_PATH
-        env:
-          RYE_VERSION: 0.24.0
-          RYE_INSTALL_OPTION: '--yes'
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
 
       - name: Bootstrap
         run: ./scripts/bootstrap
