@@ -15,8 +15,8 @@ The REST API documentation can be found [on app.stainlessapi.com](https://app.st
 ## Installation
 
 ```sh
-# install from this staging repo
-pip install git+ssh://git@github.com/stainless-sdks/hello-s-python.git
+# install from the production repo
+pip install git+ssh://git@github.com/K-zhy/stainless_test.git
 ```
 
 > [!NOTE]
@@ -214,9 +214,9 @@ store = response.parse()  # get the object that `store.inventory()` would have r
 print(store)
 ```
 
-These methods return an [`APIResponse`](https://github.com/stainless-sdks/tree/main/src/petstore/_response.py) object.
+These methods return an [`APIResponse`](https://github.com/K-zhy/stainless_test/tree/main/src/petstore/_response.py) object.
 
-The async client returns an [`AsyncAPIResponse`](https://github.com/stainless-sdks/tree/main/src/petstore/_response.py) with the same structure, the only difference being `await`able methods for reading the response content.
+The async client returns an [`AsyncAPIResponse`](https://github.com/K-zhy/stainless_test/tree/main/src/petstore/_response.py) with the same structure, the only difference being `await`able methods for reading the response content.
 
 #### `.with_streaming_response`
 
@@ -304,7 +304,7 @@ This package generally follows [SemVer](https://semver.org/spec/v2.0.0.html) con
 
 We take backwards-compatibility seriously and work hard to ensure you can rely on a smooth upgrade experience.
 
-We are keen for your feedback; please open an [issue](https://www.github.com/stainless-sdks/hello-s-python/issues) with questions, bugs, or suggestions.
+We are keen for your feedback; please open an [issue](https://www.github.com/K-zhy/stainless_test/issues) with questions, bugs, or suggestions.
 
 ## Requirements
 
